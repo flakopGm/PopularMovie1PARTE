@@ -21,7 +21,7 @@ public class NetworkUtils {
 
     private static final String API_MOVIE_URL = "http://api.themoviedb.org/3/movie?";
     private static final String API_KEY_PARAM = "api_key";
-    private static final String API_KEY = "";
+    private static final String API_KEY = "RELLENAR";
     public static final String API_KEY_COMPROBACION = API_KEY;
 
     // Recibimos un String con el órden y creamos la URL de la misma.
