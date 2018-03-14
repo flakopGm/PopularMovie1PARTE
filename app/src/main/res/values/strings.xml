@@ -20,10 +20,12 @@
     <string name="ajustes">Ajustes</string>
     <string name="ocurrioError">Ups! ocurrió un error, inténtelo de nuevo.</string>
     <string name="textoInformativo">Texto informativo sin conexión de red.</string>
-    <string name="ImagenInformativa">Imagen aviso sin conexión de red.</string>
-    <string name="ContentFechaLanzamiento">Fecha de lanzamiento de la película.</string>
-    <string name="ContentRating">Rango de valoración de la película.</string>
-    <string name="ContentOriginalTitle">Título original de la película.</string>
-    <string name="ContentBanderas">Bandera del país según el idioma original de la película.</string>
-    <string name="ContentSipnosis">Sipnosis de la película.</string>
+    <string name="imagenInformativa">Imagen aviso sin conexión de red.</string>
+    <string name="contentFechaLanzamiento">Fecha de lanzamiento de la película.</string>
+    <string name="contentRating">Rango de valoración de la película.</string>
+    <string name="contentOriginalTitle">Título original de la película.</string>
+    <string name="contentBanderas">Bandera del país según el idioma original de la película.</string>
+    <string name="contentSipnosis">Sipnosis de la película.</string>
+    <string name="no_data">Sin registro</string>
+    <string name="faltaKeyApi">Falta la key de la API</string>
 </resources>

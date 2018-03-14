@@ -7,5 +7,6 @@
         android:key="@string/key_orden_settings"
         android:entries="@array/nombres_visualicion_opciones"
         android:entryValues="@array/opciones_preferencias"
+        android:defaultValue="@string/order_popular"
         />
 </PreferenceScreen>

@@ -3,17 +3,11 @@
     android:id="@+id/linear_gridview"
     style="@style/LinearDefault">
 
-    <!--
+
     <GridView
         android:id="@+id/gridview"
         style="@style/Gridview"
-        android:numColumns="auto_fit"></GridView>-->
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </android.support.v7.widget.RecyclerView>
+        android:numColumns="auto_fit" />
 
     <!-- Texto aviso sin conexión. -->
     <TextView
@@ -23,6 +17,6 @@
     <!-- Imagen indicadora dispositivo sin conexión. -->
     <ImageView
         android:id="@+id/noconecttion"
-        style="@style/ImagenNoConexion"></ImageView>
+        style="@style/ImagenNoConexion" />
 
 </LinearLayout>

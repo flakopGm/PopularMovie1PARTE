@@ -18,7 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DetailsMovieActivity" />
+        <activity
+            android:name=".DetailsMovieActivity"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".Settings.SettingActivity"
             android:label="@string/ajustes"
             android:parentActivityName=".MainActivity">

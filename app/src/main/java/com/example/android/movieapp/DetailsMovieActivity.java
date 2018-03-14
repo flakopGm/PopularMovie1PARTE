@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+
+import com.example.android.movieapp.model.Movie;
 import com.squareup.picasso.Picasso;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -18,14 +20,20 @@ import butterknife.ButterKnife;
 
 public class DetailsMovieActivity extends AppCompatActivity {
 
-    private Context context;
-    @BindView(R.id.poster) ImageView poster;
-    @BindView(R.id.bandera) ImageView bandera;
-    @BindView(R.id.original_title) TextView originalTitle;
-    @BindView(R.id.fecha_lanza) TextView fechaLanzamiento;
-    @BindView(R.id.idioma_original) TextView idiomaOriginal;
-    @BindView(R.id.sipnosis) TextView sipnosis;
-    @BindView(R.id.vote_average)RatingBar ratingBar;
+    @BindView(R.id.poster)
+    ImageView poster;
+    @BindView(R.id.bandera)
+    ImageView bandera;
+    @BindView(R.id.original_title)
+    TextView originalTitle;
+    @BindView(R.id.fecha_lanza)
+    TextView fechaLanzamiento;
+    @BindView(R.id.idioma_original)
+    TextView idiomaOriginal;
+    @BindView(R.id.sipnosis)
+    TextView sipnosis;
+    @BindView(R.id.vote_average)
+    RatingBar ratingBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,28 +41,27 @@ public class DetailsMovieActivity extends AppCompatActivity {
         setContentView(R.layout.activity_details_movie);
         ButterKnife.bind(DetailsMovieActivity.this);
 
-        context = getApplicationContext();
+        Context context = getApplicationContext();
 
         // Recogemos los datos pasados para proceder a mostrarlos de forma adecuada.
         Intent intent = getIntent();
-        String moviePoster = intent.getStringExtra("poster");
-        String movieTitleOriginal = intent.getStringExtra("title_original");
-        String movieTitle = intent.getStringExtra("title");
-        String movieDate = intent.getStringExtra("fecha");
-        String movieOverview = intent.getStringExtra("sipnosis");
-        String movieVoteAverage = intent.getStringExtra("promedio");
-        double voto = Double.parseDouble(movieVoteAverage);
-        String idioma = intent.getStringExtra("idioma");
+        Movie currentMovie = intent.getParcelableExtra("movieSelect");
 
-        this.setTitle(movieTitle);
-        originalTitle.setText(movieTitleOriginal.toUpperCase());
+        // TITULO
+        this.setTitle(currentMovie.getmTitulo());
 
+        // FECHA
+        String movieDate = currentMovie.getmFechaLanzamiento();
         // Si la fecha es nula o está vacía definiremos que no hay info, de lo contrario la fecha.
         if (movieDate.equals("") || movieDate == null) {
-            fechaLanzamiento.setText("NO DATA");
+            fechaLanzamiento.setText(R.string.no_data);
         } else {
             fechaLanzamiento.setText(movieDate);
         }
+
+        // VALORACIÓN
+        String movieVoteAverage = currentMovie.getmPromedioVoto();
+        double voto = Double.parseDouble(movieVoteAverage);
         // Promedio aproximado para el RatingBar según la valoración de la película.
         if (voto <= 3.5) {
             ratingBar.setRating(1.5f);
@@ -69,9 +76,15 @@ public class DetailsMovieActivity extends AppCompatActivity {
         } else {
             ratingBar.setRating(0);
         }
+
+        // TITULO ORIGINAL
+        originalTitle.setText(currentMovie.getmTituloOriginal().toUpperCase());
+
+        // IDIOMA ORIGINAL
+        String idioma = currentMovie.getmIdiomaOriginal();
         // Según el idioma se establece una bandera del pais, por defecto si no se encuentra el pais
         // en el grupo añadido se oculta la bandera y se muestra las iniciales del pais.
-        idiomaOriginal.setText(idioma);
+        idiomaOriginal.setText(currentMovie.getmIdiomaOriginal());
         switch (idioma) {
             case "es":
                 bandera.setBackgroundResource(R.drawable.spain);
@@ -106,13 +119,13 @@ public class DetailsMovieActivity extends AppCompatActivity {
                 idiomaOriginal.setVisibility(View.VISIBLE);
         }
 
-        sipnosis.setText(movieOverview);
+        // SIPNOSIS
+        sipnosis.setText(currentMovie.getmSipnosis());
 
-        // Definimos la imagen redimensionada.
+        // PORTADA
         Picasso.with(context)
-                .load(moviePoster)
-                .resize(873, 600)
-
+                .load(currentMovie.getmPortada())
+                .resize(getResources().getInteger(R.integer.TargetWidth), getResources().getInteger(R.integer.TargetHeight))
                 .into(poster);
     }
 }

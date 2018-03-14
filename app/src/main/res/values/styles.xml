@@ -43,7 +43,7 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:src">@drawable/sinconexion</item>
         <item name="android:visibility">invisible</item>
-        <item name="android:contentDescription">@string/ImagenInformativa</item>
+        <item name="android:contentDescription">@string/imagenInformativa</item>
     </style>
 
     <!-- Estilos para la actividad de detalle de película en el modo portrait. -->
@@ -51,7 +51,9 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/MinDimen</item>
         <item name="android:layout_weight">@integer/WeightPoster</item>
+        <item name="android:scaleType">centerCrop</item>
         <item name="android:contentDescription">@string/contentDescriptionPoster</item>
+
     </style>
 
     <style name="Views">
@@ -95,10 +97,10 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:paddingRight">@dimen/DefaultSeparation</item>
-        <item name="android:textColor">@color/textoDetails</item>
+        <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:layout_gravity">right</item>
         <item name="android:textStyle">italic</item>
-        <item name="android:contentDescription">@string/ContentFechaLanzamiento</item>
+        <item name="android:contentDescription">@string/contentFechaLanzamiento</item>
     </style>
 
     <style name="TextoValoración">
@@ -120,7 +122,7 @@
         <item name="android:numStars">@integer/NumStart</item>
         <item name="android:rating">3</item>
         <item name="android:stepSize">0.5</item>
-        <item name="android:contentDescription">@string/ContentRating</item>
+        <item name="android:contentDescription">@string/contentRating</item>
     </style>
 
     <style name="TextoTituloMovie">
@@ -139,9 +141,9 @@
         <item name="android:paddingLeft">@dimen/DefaultSeparation</item>
         <item name="android:paddingRight">@dimen/DefaultSeparation</item>
         <item name="android:textStyle">italic</item>
-        <item name="android:textColor">@color/textoDetails</item>
+        <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:layout_below">@id/texto_title_original</item>
-        <item name="android:contentDescription">@string/ContentOriginalTitle</item>
+        <item name="android:contentDescription">@string/contentOriginalTitle</item>
     </style>
     
     <style name="TextoIdiomaOriginal">
@@ -162,14 +164,14 @@
         <item name="android:layout_marginTop">@dimen/MarginTop5</item>
         <item name="android:padding">@dimen/MarginTop5</item>
         <item name="android:layout_below">@id/texto_idioma_original</item>
-        <item name="android:contentDescription">@string/ContentBanderas</item>
+        <item name="android:contentDescription">@string/contentBanderas</item>
     </style>
 
     <style name="TextoBandera">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:paddingLeft">@dimen/DefaultSeparation</item>
-        <item name="android:textColor">@color/textoDetails</item>
+        <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:textStyle">italic</item>
         <item name="android:layout_below">@id/bandera</item>
     </style>
@@ -189,14 +191,14 @@
     <style name="sipnosis">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/textoDetails</item>
+        <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:textStyle">italic</item>
         <item name="android:layout_marginLeft">@dimen/DefaultSeparation</item>
         <item name="android:layout_marginRight">@dimen/DefaultSeparation</item>
         <item name="android:layout_marginBottom">@dimen/MarginBottom20</item>
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item>
         <item name="android:layout_below">@id/texto_sipnosis</item>
-        <item name="android:contentDescription">@string/ContentSipnosis</item>
+        <item name="android:contentDescription">@string/contentSipnosis</item>
     </style>
 
     <!-- Estilos para la pantalla de dellate de película en el modo Landscape. -->
@@ -232,7 +234,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:paddingRight">@dimen/DefaultSeparation</item>
         <item name="android:paddingLeft">@dimen/DefaultSeparation</item>
-        <item name="android:textColor">@color/textoDetails</item>
+        <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:textStyle">italic</item>
     </style>
 
@@ -256,6 +258,7 @@
         <item name="android:layout_marginTop">@dimen/MarginTop5</item>
         <item name="android:padding">@dimen/MarginTop5</item>
         <item name="android:layout_below">@id/texto_idioma_original</item>
+        <item name="android:contentDescription">@string/contentbandera</item>
     </style>
 
     <style name="TextoBanderaLand">
@@ -263,7 +266,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginLeft">@dimen/DefaultSeparation</item>
         <item name="android:layout_marginRight">@dimen/DefaultSeparation</item>
-        <item name="android:textColor">@color/textoDetails</item>
+        <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:textStyle">italic</item>
         <item name="android:layout_below">@id/bandera</item>
     </style>
@@ -310,7 +313,7 @@
         <item name="android:layout_marginRight">@dimen/DefaultSeparation</item>
         <item name="android:textStyle">italic</item>
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Light.SearchResult.Title</item>
-        <item name="android:textColor">@color/textoDetails</item>
+        <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:layout_toRightOf">@id/poster</item>
         <item name="android:gravity">center_horizontal</item>
         <item name="android:layout_below">@id/texto_title_original</item>
@@ -323,7 +326,7 @@
         <item name="android:textColor">@color/colorPrimaryDark</item>
         <item name="android:text">@string/texto_sipnosis</item>
         <item name="android:textAlignment">center</item>
-        <item name="android:layout_marginTop">@dimen/DefaultSeparation</item>
+        <item name="android:layout_marginTop">@dimen/MarginTop22</item>
         <item name="android:layout_marginLeft">@dimen/DefaultSeparation</item>
         <item name="android:layout_below">@id/original_title</item>
         <item name="android:layout_toRightOf">@id/poster</item>
@@ -334,7 +337,7 @@
     <style name="sipnosisLand">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/textoDetails</item>
+        <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:textStyle">italic</item>
         <item name="android:layout_marginLeft">@dimen/DefaultSeparation</item>
         <item name="android:layout_marginRight">@dimen/DefaultSeparation</item>
@@ -344,4 +347,5 @@
         <item name="android:layout_below">@id/texto_sipnosis</item>
     </style>
 
+    <string name="contentbandera">Imagen de la bandera del pais de origen</string>
 </resources>

@@ -28,7 +28,7 @@ public class SettingActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    // Cancelamos el botón atrás.
+    // Cancelamos el botón atrás intencionadamente.
     @Override
     public void onBackPressed() {
 

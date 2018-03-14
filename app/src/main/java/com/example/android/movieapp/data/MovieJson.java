@@ -48,14 +48,12 @@ public final class MovieJson {
             movies[x].setmSipnosis(movieInfo.getString(OVERVIEW_KEY));
             movies[x].setmFechaLanzamiento(movieInfo.getString(RELEASE_DATE_KEY));
             movies[x].setmIdiomaOriginal(movieInfo.getString(LANGUAGE_KEY));
-
         }
         return movies;
     }
 
-
       // Recibimos la parte final de la url del poster de la película y creamos su url real.
-    public static String montarUrlImagen(String finalUrl) {
+      private static String montarUrlImagen(String finalUrl) {
         final String TMDB_POSTER_BASE_URL = "https://image.tmdb.org/t/p/w185";
 
         return TMDB_POSTER_BASE_URL + finalUrl;

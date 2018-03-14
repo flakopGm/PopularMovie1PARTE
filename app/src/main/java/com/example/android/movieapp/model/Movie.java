@@ -1,13 +1,17 @@
 package com.example.android.movieapp.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by Joni *FLKPGM* on 07/03/2018.
  * <p>
  * Clase Base de una pelicula, contiene su título, título original, valoración de usuario, idioma
  * original, la sipnosis y su fecha de lanzamiento.
+ * Implementa @Parcelable.
  */
 
-public class Movie {
+public class Movie implements Parcelable {
     private String mTituloOriginal;
     private String mTitulo;
     private String mPortada;
@@ -29,6 +33,28 @@ public class Movie {
         this.mSipnosis = sipnosis;
         this.mFechaLanzamiento = fecha;
     }
+
+    private Movie(Parcel in) {
+        mTitulo = in.readString();
+        mPortada = in.readString();
+        mPromedioVoto = in.readString();
+        mIdiomaOriginal = in.readString();
+        mTituloOriginal = in.readString();
+        mSipnosis = in.readString();
+        mFechaLanzamiento = in.readString();
+    }
+
+    public static final Creator<Movie> CREATOR = new Creator<Movie>() {
+        @Override
+        public Movie createFromParcel(Parcel in) {
+            return new Movie(in);
+        }
+
+        @Override
+        public Movie[] newArray(int size) {
+            return new Movie[size];
+        }
+    };
 
     public String getmTitulo() {
         return mTitulo;
@@ -85,4 +111,21 @@ public class Movie {
     public void setmFechaLanzamiento(String mFechaLanzamiento) {
         this.mFechaLanzamiento = mFechaLanzamiento;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(mTitulo);
+        dest.writeString(mPortada);
+        dest.writeString(mPromedioVoto);
+        dest.writeString(mIdiomaOriginal);
+        dest.writeString(mTituloOriginal);
+        dest.writeString(mSipnosis);
+        dest.writeString(mFechaLanzamiento);
+    }
+
 }

@@ -7,6 +7,7 @@
     <dimen name="MarginTop10">10dp</dimen>
     <dimen name="AnchoBandera">35dp</dimen>
     <dimen name="AltoBandera">25dp</dimen>
+    <dimen name="MarginTop22">22dp</dimen>
     <dimen name="MarginBottom12">12dp</dimen>
     <dimen name="MarginBottom20">20dp</dimen>
     <dimen name="PosterLandWidth">150dp</dimen>

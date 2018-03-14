@@ -1,6 +1,9 @@
 package com.example.android.movieapp.Utilities;
 
 import android.net.Uri;
+import android.widget.Toast;
+
+import com.example.android.movieapp.MainActivity;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,6 +22,7 @@ public class NetworkUtils {
     private static final String API_MOVIE_URL = "http://api.themoviedb.org/3/movie?";
     private static final String API_KEY_PARAM = "api_key";
     private static final String API_KEY = "4926e96a132309b56560f4f86df98d4d";
+    public static final String API_KEY_COMPROBACION = API_KEY;
 
     // Recibimos un String con el órden y creamos la URL de la misma.
     public static URL buildUrl(String ordenVisualizacion) {
